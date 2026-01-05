@@ -1,0 +1,1 @@
+import ReactDOM from "https://esm.sh/react-dom@19.2.0/client"
