@@ -9,25 +9,23 @@ export function App () {
         <section className='App'>
             <TwitterFollowCard 
                 formatUserName={format} 
-                isFollowing 
                 userName='nintendo' 
                 name='Nintendo'
-            />
+            >
+                <h1>Children example</h1>
+            </TwitterFollowCard>
             <TwitterFollowCard 
-                formatUserName={format} 
-                isFollowing={false} 
+                formatUserName={format}  
                 userName='xbox' 
                 name='Xbox'
             />
             <TwitterFollowCard 
                 formatUserName={format} 
-                isFollowing 
                 userName='playstation' 
                 name='PlayStation'
             />
             <TwitterFollowCard 
                 formatUserName={format} 
-                isFollowing 
                 userName='VideoArtGame' 
                 name='VideoArtGame'
             />
