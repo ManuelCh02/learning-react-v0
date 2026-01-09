@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export function TwitterFollowCard ({ children, formatUserName ,userName = 'unknown', name, initialIsFollowing }) {
+export function TwitterFollowCard ({ children, userName = 'unknown', name, initialIsFollowing }) {
     /*
         "state" returns two different status in an array
         isFollowing = state[0] // state value
@@ -28,13 +28,14 @@ export function TwitterFollowCard ({ children, formatUserName ,userName = 'unkno
                     />
                 <div className='tw-followCard-info'>
                     <strong>{name}</strong>
-                    <span className='tw-followCard-infoUserName'>{formatUserName(userName)}</span>
+                    <span className='tw-followCard-infoUserName'>@{userName}</span>
                 </div>
             </header>
 
             <aside>
                 <button className={buttonClassName} onClick={handleClick}>
-                    {text}
+                    <span className="tw-followCard-text">{text}</span>       
+                    <span className="tw-followCard-unfollow">Unfollow</span>
                 </button>
             </aside>
         </article>

@@ -3,42 +3,54 @@ import './App.css'
 import { TwitterFollowCard } from './TwitterFollowCard.jsx'
 
 export function App () {
-    const format = (userName) => `@${userName}`
-    const formattedUserName = <span></span>
+    // const format = (userName) => `@${userName}`
+    // const formattedUserName = <span></span>
 
-    const [name, setName] = useState('nintendo')
+    // const [name, setName] = useState('nintendo')
 
-    const handleNameChanger = () => {
-        setName('apple')
-    }
+    // const handleNameChanger = () => {
+    //     setName('apple')
+    // }
+
+    const users = [
+        {
+            userName: 'nintendo',
+            name: 'Nintendo',
+            isFollowing: true
+        },
+        {
+            userName: 'apple',
+            name: 'Apple',
+            isFollowing: false
+        },
+        {
+            userName: 'playstation',
+            name: 'Play Station',
+            isFollowing: true
+        },
+        {
+            userName: 'xbox',
+            name: 'Xbox',
+            isFollowing: false
+        }
+    ]
 
     return (
         <section className='App'>
-            <TwitterFollowCard 
-                formatUserName={format} 
-                userName={name} 
-                name={name}
-                initialIsFollowing={true}
-            >
-                <h1>Children example</h1>
-            </TwitterFollowCard>
-            <TwitterFollowCard 
-                formatUserName={format}  
-                userName='xbox' 
-                name='Xbox'
-            />
-            <TwitterFollowCard 
-                formatUserName={format} 
-                userName='playstation' 
-                name='PlayStation'
-            />
-            <TwitterFollowCard 
-                formatUserName={format} 
-                userName='VideoArtGame' 
-                name='VideoArtGame'
-            />
+            
+            {
+                users.map(user => {
+                    const { userName, name, isFollowing } = user
 
-            <button onClick={handleNameChanger}>Cambio nombre</button>
+                    return (
+                        <TwitterFollowCard  
+                            userName={userName}
+                            name={name}
+                            initialIsFollowing={isFollowing}
+                        />
+                    )
+                })
+            }
         </section>
     )
 }
